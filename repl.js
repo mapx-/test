@@ -1,5 +1,5 @@
 
-// replace for inline scripts
+// replace for inline scripts - scriptlet for uBlock Origin
 // example filter:
 // hipsonyc.com##+js(rpx, /click.*_blank.*location\.href/, /^window\.location\.href.*\'$/, )
 //
