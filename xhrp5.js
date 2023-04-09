@@ -67,15 +67,15 @@
             }
             thisArg.addEventListener('readystatechange', function() {
                 if ( thisArg.readyState !== 4 ) { return; }
-                console.log('uBO:'+'file:'+args[1]);
+                //console.log('uBO:'+'file:'+args[1]);
                 //console.log('uBO:'+'state:'+thisArg.readyState);
                 const type = thisArg.responseType;
                 //console.log('uBO:'+'type:'+type);
                 if ( type !== '' && type !== 'text' ) { return; }
                 const textin = thisArg.responseText;
-                console.log('uBO:'+'textin:'+textin);
+                //console.log('uBO:'+'textin:'+textin);
                 const textout = pruner(textin);
-                console.log('uBO:'+'textout:'+textout);
+                //console.log('uBO:'+'textout:'+textout);
                 if ( textout === textin ) { return; }
                 Object.defineProperty(thisArg, 'response', { value: textout });
                 Object.defineProperty(thisArg, 'responseText', { value: textout });
