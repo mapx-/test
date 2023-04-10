@@ -39,9 +39,9 @@
 					  if (node.tagName === 'SCRIPT') {
 						  if (needle.test(node.textContent) ) {
 							  let ttt = node.textContent;
-							  console.log('in:'+ttt);
+							  console.log('uBO: in:'+ttt);
 							  ttt  = ttt.replace(what, by);
-							  console.log('out:'+ttt);
+							  console.log('uBO: out:'+ttt);
 							  node.textContent = ttt;
 						  }
 					  }
