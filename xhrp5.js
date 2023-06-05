@@ -7,35 +7,15 @@
 // param2 regular expression, to search for
 // param3 The new value (to replace with)
 /// xhrp.js
-    (function() {
-        'use strict';
-          let urlXHR = '{{1}}';
-          if ( urlXHR === '' || urlXHR === '{{1}}' ) {
-              urlXHR = '';
-          } else if ( urlXHR.startsWith('/') && urlXHR.endsWith('/') ) {
-              urlXHR = urlXHR.slice(1,-1);
-          } else {
-              urlXHR = urlXHR.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-          }
-          urlXHR = new RegExp(urlXHR);
-          let what = '{{2}}';
-          if ( what === '' || what === '{{2}}' ) {
-              what = '';
-          } else if ( what.startsWith('/') && what.endsWith('/') ) {
-              what = what.slice(1,-1);
-          } else {
-              what = what.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-          }
-          what = new RegExp(what, "gms");
-          let by = '{{3}}';
-          if ( by === '' || by === '{{3}}' ) {
-              by = '';
-          }
-          //console.log('uBO:'+'urlXHR:'+urlXHR);
-          //console.log('uBO:'+'what:'+what);
+/// dependency pattern-to-regex.fn
+function xhrp(urlXHR = '', what = '', by = '') {
+          const reUrlXHR = patternToRegex(urlXHR);
+          const reWhat = patternToRegex(what, 'gms');
+		  //console.log('uBO:'+'reUrlXHR:'+reUrlXHR);
+          //console.log('uBO:'+'reWhat:'+reWhat);
           //console.log('uBO:'+'by:'+by);
     const pruner = text => {
-    	text  = text.replace(what, by);
+    	text  = text.replace(reWhat, by);
         return text;
     };
     const urlFromArg = arg => {
@@ -46,7 +26,7 @@
     const realFetch = self.fetch;
     self.fetch = new Proxy(self.fetch, {
         apply: function(target, thisArg, args) {
-            if ( urlXHR.test(urlFromArg(args[0])) === false ) {
+            if ( reUrlXHR.test(urlFromArg(args[0])) === false ) {
                 return Reflect.apply(target, thisArg, args);
             }
             return realFetch(...args).then(realResponse =>
@@ -62,7 +42,7 @@
     });
     self.XMLHttpRequest.prototype.open = new Proxy(self.XMLHttpRequest.prototype.open, {
         apply: async (target, thisArg, args) => {
-            if ( urlXHR.test(urlFromArg(args[1])) === false ) {
+            if ( reUrlXHR.test(urlFromArg(args[1])) === false ) {
                 return Reflect.apply(target, thisArg, args);
             }
             thisArg.addEventListener('readystatechange', function() {
@@ -83,4 +63,4 @@
             return Reflect.apply(target, thisArg, args);
         }
     });
-})();
+}
