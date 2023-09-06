@@ -7,7 +7,7 @@
 // param2 regular expression, to search for
 // param3 The new value (to replace with)
 /// xhrp.js
-/// dependency pattern-to-regex.fn
+/// dependency safe-self.fn
 function xhrp(urlXHR = '', what = '', by = '') {
           const reUrlXHR = safe.patternToRegex(urlXHR);
           const reWhat = safe.patternToRegex(what, 'gms');
