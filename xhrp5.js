@@ -9,8 +9,8 @@
 /// xhrp.js
 /// dependency pattern-to-regex.fn
 function xhrp(urlXHR = '', what = '', by = '') {
-          const reUrlXHR = patternToRegex(urlXHR);
-          const reWhat = patternToRegex(what, 'gms');
+          const reUrlXHR = safe.patternToRegex(urlXHR);
+          const reWhat = safe.patternToRegex(what, 'gms');
 		  //console.log('uBO:'+'reUrlXHR:'+reUrlXHR);
           //console.log('uBO:'+'reWhat:'+reWhat);
           //console.log('uBO:'+'by:'+by);
