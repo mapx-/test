@@ -16,4 +16,4 @@ jobs:
         with:
           actions: 'delete-comment'
           token: ${{ secrets.GITHUB_TOKEN }}
-          comment-id: ${{ github.event.comment.id }}
+          comment-id: github.event.comment.id
