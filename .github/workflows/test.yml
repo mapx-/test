@@ -1,7 +1,6 @@
 on:
   issue_comment:
     types: created
-	
 jobs:
   check-if-bad-comment:
     name: delete bad comment
