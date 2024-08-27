@@ -15,4 +15,5 @@ jobs:
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'delete-comment'
+          token: ${{ secrets.GITHUB_TOKEN }}
           comment-id: ${{ github.event.comment.id }}
