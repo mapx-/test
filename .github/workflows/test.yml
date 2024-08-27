@@ -11,4 +11,8 @@ jobs:
     steps:
       - run: echo ${{ github.event.comment.body }}
              echo ${{ github.event.comment.id }}
-    
+      - name: Delete comment
+          uses: actions-cool/issues-helper@v3
+          with:
+            actions: 'delete-comment'
+            comment-id: github.event.comment.id
