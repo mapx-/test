@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Delete comment
         run: |
-          echo ${{ github.event.comment.body }}
+          echo "body ${{ github.event.comment.body }} "
       - uses: actions-cool/issues-helper@v3
         with:
           actions: 'delete-comment'
