@@ -15,4 +15,4 @@ jobs:
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'delete-comment'
-          comment-id: github.event.comment.id
+          comment-id: ${{ github.event.comment.id }}
