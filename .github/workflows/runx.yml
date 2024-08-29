@@ -7,6 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: script
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: | 
            chmod +x ".github/delete-logs.sh"
            .github/delete-logs.sh mapx-/test test.yml
