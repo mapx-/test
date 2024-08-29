@@ -1,0 +1,19 @@
+name: run1-script
+on: workflow_dispatch
+jobs:
+  runx:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: christosgalano/delete-workflow-runs@v1.0.0
+        with:
+          owner: mapx-
+          repo: test
+          token: ${{ secrets.workflow_PAT }}
+          workflow: test.yml
+          
+          
+
+
+    
+    
