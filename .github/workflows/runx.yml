@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
-      - uses: actions-cool/issues-helper@v3
+      - uses: actions/checkout@v2
       - name: script
         run: | 
            chmod +x ".github/delete-logs.sh"
