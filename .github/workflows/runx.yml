@@ -3,6 +3,7 @@ on: workflow_dispatch
 jobs:
   runx:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - uses: actions/checkout@v1
       - name: script
