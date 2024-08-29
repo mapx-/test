@@ -9,7 +9,7 @@ jobs:
         with:
           owner: mapx-
           repo: test
-          token: ${{ secrets.workflow_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           workflow: test.yml
           
           
