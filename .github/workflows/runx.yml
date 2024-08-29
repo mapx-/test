@@ -9,7 +9,7 @@ jobs:
       - name: script
         run: | 
            chmod +x ".github/delete-logs.sh"
-           .github/delete-logs.sh
+           .github/delete-logs.sh mapx-/test test.yml
            shell: bash
           
           
