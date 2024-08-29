@@ -7,7 +7,7 @@ runs-on: ubuntu-latest
 steps:
 - uses: actions/checkout@v1
 - name: script
-run: bash .github/delete-logs.sh
+run: delete-logs.sh
 shell: bash
 with:
 password: ${{ secrets.ACCESS_TOKEN }}
