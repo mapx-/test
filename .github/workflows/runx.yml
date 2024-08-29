@@ -7,8 +7,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: script
-        run: .github/delete-logs.sh
-        shell: bash
+        run: | 
+           chmod +x ".github/delete-logs.sh"
+           .github/delete-logs.sh
+           shell: bash
           
           
 
