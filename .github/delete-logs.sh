@@ -41,7 +41,7 @@ for RUN in $RUNS; do
     -H "Accept: application/vnd.github+json" \
     -H "X-GitHub-Api-Version: 2022-11-28" \
     "/repos/$REPOSITORY/actions/runs/$RUN/logs" || echo "Failed to delete logs for run $RUN"
-
+  echo "end $RUN"
   # Sleep for 100ms to avoid rate limiting
   sleep 0.1
 done
