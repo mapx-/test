@@ -1,13 +1,14 @@
 name: run-script
 on: workflow_dispatch
-
 jobs:
-run:
-runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@v1
-- name: script
-run: delete-logs.sh
-shell: bash
-with:
-password: ${{ secrets.ACCESS_TOKEN }}
+  runx:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: script
+        run: delete-logs.sh
+        shell: bash
+          
+          
+
+
