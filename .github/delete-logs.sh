@@ -43,5 +43,5 @@ for RUN in $RUNS; do
     "/repos/$REPOSITORY/actions/runs/$RUN/logs" || echo "Failed to delete logs for run $RUN"
   echo "end $RUN"
   # Sleep for 100ms to avoid rate limiting
-  # sleep 0.1
+  sleep 0.1
 done
