@@ -10,7 +10,7 @@ jobs:
           owner: mapx-
           repo: test
           token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: .github/workflows/test.yml
+          workflow: run-script
           
           
 
