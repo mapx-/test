@@ -1,4 +1,4 @@
-name: run1-script
+name: del-runs-comments
 on: workflow_dispatch
 jobs:
   runx:
