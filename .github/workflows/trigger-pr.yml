@@ -1,0 +1,10 @@
+name: test
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo yo
