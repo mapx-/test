@@ -7,4 +7,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo yo
+      - run: echo The Title of your PR is ${{ github.event.pull_request.title }}
