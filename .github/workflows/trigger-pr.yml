@@ -1,4 +1,4 @@
-name: test
+name: trigger-pr
 on:
   pull_request:
     types: [opened, reopened]
